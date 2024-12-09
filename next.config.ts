@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     serverActions: {
       bodySizeLimit: '10mb',
-      allowedOrigins: ['http://localhost:3000'],
+      allowedOrigins: ['http://localhost:3000', 'https://get-holidays-omega.vercel.app'],
     }
   },
 };
