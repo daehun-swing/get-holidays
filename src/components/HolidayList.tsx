@@ -16,15 +16,18 @@ export function HolidayList({ holidays, isLoading }: HolidayListProps) {
   }
 
   return (
-    <ol className="flex flex-col gap-4 w-full max-w-xl">
-      {holidays.map((item) => (
+    <div className="flex flex-col w-full gap-1">
+      <span className="w-full text-end text-sm text-gray-500">총 {holidays.length}</span>
+      <ol className="flex flex-col gap-4 w-full max-w-xl">
+        {holidays.map((item) => (
         <HolidayItem key={`${item.locdate}-${item.dateName}`} holiday={item} />
       ))}
       {holidays.length === 0 && !isLoading && (
         <p className="text-center text-gray-400">
           공휴일 정보를 불러오는 중입니다...
-        </p>
-      )}
-    </ol>
+          </p>
+        )}
+      </ol>
+    </div>
   );
 } 
